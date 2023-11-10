@@ -93,5 +93,23 @@ namespace Mango.Services.ProductAPI.Controllers
             }
             return _response;
         }
+
+        [HttpDelete]
+        [Route("{id:int}")]
+        public ResponseDto Delete(int id) 
+        {
+            try
+            {
+                Product obj = _db.Products.First(u => u.ProductId == id);
+                _db.Products.Remove(obj);
+                _db.SaveChanges();
+            }
+            catch (Exception ex) 
+            {
+                _response.IsSuccess = false;
+                _response.Message = ex.Message;
+            }
+            return _response;
+        }
     }
 }
