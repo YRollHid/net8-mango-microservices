@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Mango.Services.ProductAPI.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20231110134308_AddProductToDb")]
+    [Migration("20231110222534_AddProductToDb")]
     partial class AddProductToDb
     {
         /// <inheritdoc />
@@ -40,8 +40,10 @@ namespace Mango.Services.ProductAPI.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("ImageLocalPath")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("ImageUrl")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
