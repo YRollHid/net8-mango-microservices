@@ -186,8 +186,8 @@ namespace Mango.Services.OrderAPI.Controllers
                 var paymentIntentService = new PaymentIntentService();
                 PaymentIntent paymentIntent = paymentIntentService.Get(session.PaymentIntentId);
 
-                //if (paymentIntent.Status == "succeeded")
-                //{
+                if (paymentIntent.Status == "succeeded")
+                {
                     //then payment was successful
                     orderHeader.PaymentIntentId = paymentIntent.Id;
                     orderHeader.Status = SD.Status_Approved;
@@ -200,8 +200,8 @@ namespace Mango.Services.OrderAPI.Controllers
                     //};
                     //string topicName = _configuration.GetValue<string>("TopicAndQueueNames:OrderCreatedTopic");
                     //await _messageBus.PublishMessage(rewardsDto, topicName);
-                    //_response.Result = _mapper.Map<OrderHeaderDto>(orderHeader);
-                //}
+                    _response.Result = _mapper.Map<OrderHeaderDto>(orderHeader);
+                }
 
             }
             catch (Exception ex)
