@@ -59,7 +59,7 @@ namespace Mango.Services.ProductAPI.Controllers
 
         [HttpPost]
         [Authorize(Roles = "ADMIN")]
-        public ResponseDto Post([FromBody] ProductDto productDto) 
+        public ResponseDto Post(ProductDto productDto) 
         {
             try 
             {
@@ -110,7 +110,7 @@ namespace Mango.Services.ProductAPI.Controllers
 
         [HttpPut]
         [Authorize(Roles = "ADMIN")]
-        public ResponseDto Put([FromBody] ProductDto productDto) 
+        public ResponseDto Put(ProductDto productDto) 
         {
             try
             {
