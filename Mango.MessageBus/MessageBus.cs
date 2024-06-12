@@ -12,8 +12,6 @@ namespace Mango.MessageBus
     public class MessageBus : IMessageBus
     {
         private readonly IConfiguration _configuration;
-        private string connectionString = "ServiceBusConnectionString";
-
         public string? ConnectionString { get; private set; }
 
         public MessageBus(IConfiguration configuration)
