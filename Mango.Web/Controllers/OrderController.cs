@@ -22,6 +22,7 @@ namespace Mango.Web.Controllers
             return View();
         }
 
+        [Authorize]
         public async Task<IActionResult> OrderDetail(int orderId)
         {
             OrderHeaderDto orderHeaderDto = new OrderHeaderDto();
